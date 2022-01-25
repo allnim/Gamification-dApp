@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useMoralis, useNFTBalances } from "react-moralis";
-import { Card, Image, Tooltip, Modal, Input, Skeleton } from "antd";
-import { FileSearchOutlined, SendOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import { getExplorer } from "helpers/networks";
+import React, {useState} from "react";
+import {useMoralis, useNFTBalances} from "react-moralis";
+import {Card, Image, Input, Modal, Skeleton, Tooltip} from "antd";
+import {FileSearchOutlined, SendOutlined, ShoppingCartOutlined} from "@ant-design/icons";
+import {getExplorer} from "helpers/networks";
 import AddressInput from "./AddressInput";
-import { useVerifyMetadata } from "hooks/useVerifyMetadata";
+import {useVerifyMetadata} from "hooks/useVerifyMetadata";
 
 const { Meta } = Card;
 
@@ -67,7 +67,7 @@ function NFTBalance() {
   console.log("NFTBalances", NFTBalances);
   return (
     <div style={{ padding: "15px", maxWidth: "1030px", width: "100%" }}>
-      <h1>🖼 NFT Balances</h1>
+      <h1>Your Copyright Shares</h1>
       <div style={styles.NFTs}>
         <Skeleton loading={!NFTBalances?.result}>
           {NFTBalances?.result &&

@@ -1,4 +1,4 @@
-import { FireFilled } from "@ant-design/icons";
+import {FireFilled} from "@ant-design/icons";
 
 const styles = {
   token: {
@@ -19,7 +19,7 @@ function TokenPrice() {
     <div style={styles.token}>
       <FireFilled />
       <span >
-        Runes
+        RocknRolls
       </span>
     </div>
   );

@@ -1,11 +1,6 @@
-import { useEffect } from "react";
-import { useMoralis } from "react-moralis";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import {useEffect} from "react";
+import {useMoralis} from "react-moralis";
+import {BrowserRouter as Router, Redirect, Route, Switch,} from "react-router-dom";
 import Account from "components/Account/Account";
 import TokenPrice from "components/TokenPrice";
 import ERC20Balance from "components/ERC20Balance";
@@ -13,7 +8,7 @@ import ERC20Transfers from "components/ERC20Transfers";
 import DEX from "components/DEX";
 import NFTBalance from "components/NFTBalance";
 import Wallet from "components/Wallet";
-import { Layout, Tabs } from "antd";
+import {Layout, Tabs} from "antd";
 import "antd/dist/antd.less";
 import "./style.less";
 import Gamify from "components/Gamify";
@@ -21,7 +16,8 @@ import Contract from "components/Contract/Contract";
 import Ramper from "components/Ramper";
 import MenuItems from "./components/MenuItems";
 import logo from "Logo.png";
-import { TrophyFilled, GiftFilled, FireFilled } from "@ant-design/icons";
+import {FireFilled, GiftFilled, TrophyFilled} from "@ant-design/icons";
+
 const { Header } = Layout;
 
 const styles = {
@@ -95,7 +91,7 @@ const App = ({ isServerInfo }) => {
                 defaultActiveKey="1"
                 tabPosition="left"
               >
-                <Tabs.TabPane tab={<span><FireFilled />My Runes</span>} key="1">
+                <Tabs.TabPane tab={<span><FireFilled />My RocknRoll</span>} key="1">
                   <Gamify tab="runes" />
                 </Tabs.TabPane>
                 <Tabs.TabPane tab={<span><TrophyFilled /> Leaderboard</span>} key="2">

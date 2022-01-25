@@ -1,15 +1,15 @@
-import { Typography, Tag, Button, Table, Space, Card, Modal } from "antd";
-import { FireFilled } from "@ant-design/icons";
+import {Button, Card, Modal, Space, Table, Tag, Typography} from "antd";
+import {FireFilled} from "@ant-design/icons";
 import Runes from "../Runes.png";
 import RunesCollected from "../RunesCollected.png";
 import Mages from "../Mages.png";
 import Hoodie from "../Hoodie.png";
 import Blockie from "./Blockie";
-import { getEllipsisTxt } from "helpers/formatters";
-import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
+import {getEllipsisTxt} from "helpers/formatters";
+import {useMoralis, useWeb3ExecuteFunction} from "react-moralis";
 import moment from "moment";
 import useCollectors from "hooks/useCollectors";
-import { useState, useEffect } from "react";
+import {useEffect, useState} from "react";
 
 const { Title } = Typography;
 
@@ -19,7 +19,7 @@ const styles = {
     marginBottom: "40px",
     width: "310px",
     height: "150px",
-    background: "#21bf96",
+    background: "rgba(0,0,0,0.44)",
     borderRadius: "20px",
     display: "flex",
     overflow: "hidden",
@@ -107,7 +107,7 @@ export default function Gamify({ tab }) {
       let secondsToGo = 5;
       const modal = Modal.error({
         title: "Hold Up!",
-        content: `Make sure you collect enough runes before collecting this reward`,
+        content: `Make sure you collect enough Rock and Rolls before collecting this reward`,
       });
       setTimeout(() => {
         modal.destroy();
@@ -141,7 +141,7 @@ export default function Gamify({ tab }) {
         let secondsToGo = 10;
         const modal = Modal.success({
           title: "Success!",
-          content: `Check your wallet for your new magical NFT`,
+          content: `Check your wallet for your new Rock and Roll NFT`,
         });
         setTimeout(() => {
           modal.destroy();
@@ -167,6 +167,7 @@ export default function Gamify({ tab }) {
       setCollected(true);
       setUserRunes(0);
     }
+    // eslint-disable-next-line
   }, [isInitialized, isAuthenticated]);
 
   async function addRunes() {
@@ -201,7 +202,7 @@ export default function Gamify({ tab }) {
       title: "Success!",
       content: (
         <>
-          <p>You have collected some runes</p>
+          <p>You have collected some Rock and Rolls</p>
           <img src={Runes} alt="" style={{ width: "280px" }} />
         </>
       ),
@@ -215,7 +216,7 @@ export default function Gamify({ tab }) {
     let secondsToGo = 5;
     const modal = Modal.error({
       title: "Hold Up!",
-      content: `You can only collect runes once a day, please come back tomorrow`,
+      content: `You can only collect Rock and Rolls once a day, please come back tomorrow`,
     });
     setTimeout(() => {
       modal.destroy();
@@ -229,7 +230,7 @@ export default function Gamify({ tab }) {
       key: "rank",
     },
     {
-      title: "Mage",
+      title: "Music Fan",
       key: "ethAddress",
       render: (text, record) => (
         <Space size="middle">
@@ -243,7 +244,7 @@ export default function Gamify({ tab }) {
       ),
     },
     {
-      title: "Runes Accumulated",
+      title: "Rock and Rolls Accumulated",
       dataIndex: "runes",
       key: "runes",
       align: "right",
@@ -254,16 +255,16 @@ export default function Gamify({ tab }) {
     return (
       <div style={{ paddingLeft: "5vw", width: "70vw" }}>
         <Title level={2} style={{ color: "white" }}>
-          My Moralis Runes
+          My Rock and Rolls
         </Title>
         <p style={{ color: "gray" }}>
-          Collect Moralis Runes, climb the communnity leaderboard and claim
-          magical rewards
+          Collect Rock and Rolls, climb the Fans leaderboard and claim
+          your rewards
         </p>
 
         <div style={styles.collected}>
           <div style={styles.colHeading}>
-            <span>My Runes</span>
+            <span>RocknRolls</span>
             <p style={styles.count}>{userRunes}</p>
           </div>
           <div>
@@ -272,24 +273,24 @@ export default function Gamify({ tab }) {
         </div>
 
         <Tag color="rgba(47,79,79, 0.2)" style={{ color: "#21bf96" }}>
-          Collect Runes
+          Collect RocknRolls
         </Tag>
 
         <div style={styles.daily}>
           <div>
             <Title level={3} style={{ color: "white" }}>
-              Daily Rune Collection
+              Daily Rock and Rolls Collection
             </Title>
             <p style={{ color: "gray" }}>
               If you visit us everyday you will have the opportunity to receive
-              bonus runes
+              bonus Rock and Rolls
             </p>
           </div>
           <Button
             style={collected ? styles.cantCollect : styles.collect}
             onClick={() => addRunes()}
           >
-            Collect Runes
+            Collect Rock and Rolls
           </Button>
         </div>
         <div style={styles.claimrow}>
@@ -316,8 +317,8 @@ export default function Gamify({ tab }) {
           ))}
         </div>
         <span style={{ color: "gray" }}>
-          Learn more abour Moralis?{" "}
-          <a href="https://www.moralis.io">Our website</a>
+          Learn more abour Copyright Flow?{" "}
+          <a href="https://copyrightflow.com">Our website</a>
         </span>
       </div>
     );
@@ -328,10 +329,10 @@ export default function Gamify({ tab }) {
       <div style={{ paddingLeft: "5vw", width: "70vw" }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Title level={2} style={{ color: "white" }}>
-            Claim Your Rewards
+            Claim Your Rock and Roll Rewards
           </Title>
           <Space size={"small"}>
-            <span style={{ color: "gray" }}> Your Runes:</span>
+            <span style={{ color: "gray" }}> Your Rock and Rolls:</span>
             <Tag color={"#324252"} style={{ height: "22px" }}>
               <FireFilled /> {userRunes}
             </Tag>
@@ -339,8 +340,8 @@ export default function Gamify({ tab }) {
         </div>
 
         <p style={{ color: "gray", marginBottom: "35px" }}>
-          Dillignetly collecting runes will allow you to claim amazing rewards
-          like NFTs and merch. Browse to see what you can afford.
+          Diligently collecting Rock and Rolls will allow you to claim amazing rewards
+          like NFTs and back stage passes. Browse to see what you can afford.
         </p>
 
         <Tag color="rgba(47,79,79, 0.2)" style={{ color: "#21bf96" }}>
@@ -358,11 +359,11 @@ export default function Gamify({ tab }) {
             }
           >
             <Title level={5} style={{ color: "white" }}>
-              Rune Collector - Mage NFT
+              RocknRoll Collector - Music Fans
             </Title>
             <p style={{ color: "gray" }}>
-              Collect enough runes to earn the title of Rune Collector and join
-              a community of Mage NFT holders.
+              Collect enough RocknRolls to earn the title of Rock and Roll Collector and join
+              a community of Music Fans.
             </p>
             <div style={styles.bottom}>
               <Space size={"small"}>
@@ -384,11 +385,11 @@ export default function Gamify({ tab }) {
             }
           >
             <Title level={5} style={{ color: "white" }}>
-              Moralis Merch - Hoodie
+              Back stage passes
             </Title>
             <p style={{ color: "gray" }}>
-              Upgrade your wardrobe, by coverting your runes into some fresh
-              Moralis swag!
+              Meet your heroes, by converting your RocknRolls into backstage
+              passes!
             </p>
             <div style={styles.bottom}>
               <Space size={"small"}>
@@ -409,10 +410,10 @@ export default function Gamify({ tab }) {
     return (
       <div style={{ paddingLeft: "5vw", width: "70vw" }}>
         <Title level={2} style={{ color: "white" }}>
-          Moralis Rune Collectors Leaderboard
+          Rock and Roll Music Fans Leaderboard
         </Title>
         <p style={{ color: "gray" }}>
-          Ranking of mages with the highest number of runes accumulated
+          Ranking of Music Fans with the highest number of Rock and Rolls accumulated
         </p>
         {dataSource && (
           <Table
