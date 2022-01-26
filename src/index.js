@@ -8,8 +8,8 @@ import Gamify from "components/Gamify";
 
 /** Get your free Moralis Account https://moralis.io/ */
 
-const APP_ID = "gYdQU1yhfngTet7rvc01bGr4R3dU1QoICiM0gEUS";
-const SERVER_URL = "https://0fqztrvnh3x8.usemoralis.com:2053/server";
+const APP_ID = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+const SERVER_URL = process.env.REACT_APP_MORALIS_SERVER_URL;
 
 const Application = () => {
   const isServerInfo = APP_ID && SERVER_URL ? true : false;
